@@ -1,0 +1,33 @@
+# OS generated files #
+######################
+.DS_Store
+Thumbs.db
+
+# JetBrains IDEs #
+##################
+.idea/
+*.iml
+*.iws
+
+# Build directories #
+#####################
+/out/
+/build/
+/dist/
+
+# Dependency directories #
+##########################
+/node_modules/
+/venv/
+/vendor/
+
+# Log files #
+#############
+*.log
+
+# Temporary files #
+###################
+*.tmp
+*.swp
+*.bak
+*.old
