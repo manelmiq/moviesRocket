@@ -3,8 +3,17 @@ import { Button } from '../../components/button';
 import { Movie } from '../../components/movie';
 import { Container } from './styles';
 import { FiPlus } from 'react-icons/fi';
+import {DataContext, useData} from '../../contexts/DataContext';
+import {useContext, useEffect} from "react";
+
 
 export function Home() {
+  const { data, setData } = useData()
+  
+  useEffect(() => {
+    console.log(data)
+  }, [data]);
+  
   return(
     <Container>
       <Header/>

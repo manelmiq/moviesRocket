@@ -9,7 +9,8 @@ const Routes = () => {
   
   return (
     <BrowserRouter>
-      {user ? <AppRoutes/> : <AuthRoutes/>}
+      {user ? <AppRoutes/>
+        : <AuthRoutes/>}
     </BrowserRouter>
   )
 }
