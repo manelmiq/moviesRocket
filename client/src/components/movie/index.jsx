@@ -4,11 +4,13 @@ import { BiSolidStar } from 'react-icons/bi';
 import { Tag } from '../../components/tag';
 import { Link } from 'react-router-dom';
 
-export function Movie(props) {
+export function Movie({id, title, description, rating, tags}) {
   return(
     <Container>
       <div className="movie">
-        <Link to="/details/1">{props.title}</Link>
+        <Link to={`/details/${id}`}>
+          {title}
+        </Link>
         <div className="rating">
           <BiSolidStar/>
           <BiSolidStar/>
@@ -16,8 +18,8 @@ export function Movie(props) {
           <BiSolidStar/>
           <FiStar/>
         </div>
-        <p id={props.id} className={props.className} >
-          {props.texto}
+        <p id={id} >
+          {description}
         </p>
         <div className="tags">
           <Tag title="Action" />

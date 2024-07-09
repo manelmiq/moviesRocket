@@ -1,12 +1,15 @@
 import { FiSearch } from 'react-icons/fi';
 import { Container, Profile, UserProfile } from "./styles";
-import { Input } from "../../components/input";
+import { Input } from "../input/index.jsx";
 import { useAuth } from '../../hooks/auth';
 import { api } from '../../services/api';
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
+import {useContext} from "react";
+import {DataContext} from "../../context/DataContex.jsx";
 
 export function Header() {
   const { signOut, user } = useAuth();
+  const { data , setData } = useContext(DataContext)
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
   return(
@@ -16,6 +19,9 @@ export function Header() {
         type="text"
         placeholder="Search"
         icon={FiSearch}
+        onChange={(e) => {
+          setData({...data, search: e.target.value});
+        }}
       />
       <Profile>
         <section>
